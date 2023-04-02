@@ -8,7 +8,11 @@
 
 
 # Tools
-
+Cloud -
+Batch Processing -
+Data Lake -
+Data Warehouse -
+Data Visualization -
 
 # Architecture
 
