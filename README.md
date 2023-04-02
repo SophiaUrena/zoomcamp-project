@@ -1,20 +1,20 @@
 # New York City Crime Analytics
 
 
-#Introduction
-
-asdfadfs
-#Dataset
+# Introduction
 
 
-#Tools
+# Dataset
 
 
-#Architecture
+# Tools
 
 
-#Steps to Reproduce
+# Architecture
 
 
-#Dashboard
+# Steps to Reproduce
+
+
+# Dashboard
 
