@@ -1,19 +1,19 @@
 # New York City Crime Analytics
 
 
-#Introduction
+# Introduction
 
 
-#Dataset
+# Dataset
 
 
-#Tools
+# Tools
 
 
-#Architecture
+# Architecture
 
 
-#Steps to Reproduce
+# Steps to Reproduce
 
 
-#Dashboard
+# Dashboard
