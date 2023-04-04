@@ -5,7 +5,7 @@
 
 
 # Dataset
-The Dataset can be downloaded https://pokeapi.co/api/v2/type/1/ 
+The Dataset can be downloaded https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json 
 List of fun datasets https://github.com/jdorfman/awesome-json-datasets 
 
 # Tools
