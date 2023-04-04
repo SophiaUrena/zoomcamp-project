@@ -1,18 +1,18 @@
-# New York City Crime Analytics
+# Pokemon Type Analytics
 
 
 # Introduction
 
 
 # Dataset
-
+The Dataset can be downloaded https://pokeapi.co/api/v2/type/1/ 
+List of fun datasets https://github.com/jdorfman/awesome-json-datasets 
 
 # Tools
-Cloud -
-Batch Processing -
-Data Lake -
-Data Warehouse -
-Data Visualization -
+Cloud - AWS S3 Bucket and Azure 
+Data Lake - Azure Data Lake
+Data Warehouse - SQL Database
+Data Visualization - Power BI
 
 # Architecture
 
