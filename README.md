@@ -24,13 +24,13 @@ Data Visualization - Power BI
 # Architecture
 ![image](https://user-images.githubusercontent.com/121827505/230258864-063b5552-42b8-4840-b4eb-d2e88cdab6b4.png)
 
-# Steps to Reproduce
+# Steps to Reproduction
 1. JSON files are placed into the AWS S3 bucket which was then copied into a Landing folder in Azure DataLake Storage Account Container using Azure Data Factory Copy Pipeline
 2. The JSON files are placed into the landing folder which was then transfered into Databricks which then transfered the JSON files to a CSV file format. 
 3. Another Azure Data Factory Copy Pipeline was used to extract files from the staging folder and load the files into Azure SQL Database.
 4. The CSV files are then uploaded to PowerBI from the Azure SQL Database.
 
-The setup for each steps are included within this repository.
+The setup and code for each step are included within this repository. Azure was the main cloud platform used throughout this project.
 
 # Dashboard
 ![image](https://user-images.githubusercontent.com/121827505/230258778-46dce08d-ed7b-489e-933a-70aebcc6d8f4.png)
