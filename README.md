@@ -11,10 +11,14 @@ This project used the [NYPD Compliant Data Historic](https://data.cityofnewyork.
 Each complaint has an ID, description of the crime committed, along with documentation of the date and location of the occurrence. 
 
 # Tools
-Cloud - AWS S3 Bucket and Azure 
+Cloud - AWS S3 Bucket and Azure
+
 Data Lake - Azure Data Lake
+
 Data Warehouse - SQL Database
+
 ETL - Databricks and Azure Data Factory
+
 Data Visualization - Power BI
 
 # Architecture
