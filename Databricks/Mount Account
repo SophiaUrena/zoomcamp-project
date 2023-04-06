@@ -1,0 +1,5 @@
+if not any(mount.mountPoint == landingMountPoint for mount in dbutils.fs.mounts()):
+    dbutils.fs.mount( source = 'wasbs://{}@{}.blob.core.windows.net'.format(storageContainer, storageAccount), mount_point= landingMountPoint, extra_configs ={'fs.azure.sas.{}.{}.blob.core.windows.net'.format(storageContainer,storageAccount):dbutils.secrets.get(scope = databricksScopeName, key= stgAccountSASTokenKey)})
+    print('Mounted the storage account successfully')
+else:
+    print('Storage account already mounted')
