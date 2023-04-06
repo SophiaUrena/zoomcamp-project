@@ -1,0 +1,50 @@
+import json
+import requests
+import pandas as pd
+
+# URL of the JSON file
+#url = 'https://drive.google.com/file/d/1lJBE-u9cbv6yowtLAeNc3Ovy5WmgY_Hs/view'
+
+# Read the JSON file into a DataFrame
+jsonFilePath = "/mnt/landing/2023/04/05/NYC_crime.json"
+df = spark.read.json(jsonFilePath)
+
+#Schema Structure
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+
+schema = StructType([
+    StructField("CMPLNT_NUM", IntegerType(), True),
+    StructField("ADDR_PCT_CD", IntegerType(), True),
+    StructField("BORO_NM", StringType(), True),
+    StructField("CMPLNT_FR_DT", StringType(), True),
+    StructField("CMPLNT_FR_TM", StringType(), True),
+    StructField("CMPLNT_TO_DT", StringType(), True),
+    StructField("CMPLNT_TO_TM", StringType(), True),
+    StructField("CRM_ATPT_CPTD_CD", StringType(), True),
+    StructField("HADEVELOPT", StringType(), True),
+    StructField("JURIS_DESC", StringType(), True),
+    StructField("KY_CD", IntegerType(), True),
+    StructField("LAW_CAT_CD", StringType(), True),
+    StructField("LOC_OF_OCCUR_DESC", StringType(), True),
+    StructField("OFNS_DESC", StringType(), True),
+    StructField("PARKS_NM", StringType(), True),
+    StructField("PD_CD", IntegerType(), True),
+    StructField("PD_DESC", StringType(), True),
+    StructField("PREM_TYP_DESC", StringType(), True),
+    StructField("RPT_DT", StringType(), True),
+    StructField("X_COORD_CD", IntegerType(), True),
+    StructField("Y_COORD_CD", IntegerType(), True),
+    StructField("Latitude", StringType(), True),
+    StructField("Longitutde", StringType(), True),
+    StructField("Lat_Lon", StringType(), True)
+])
+
+#ignore corrupt records
+options = {"mode": "PERMISSIVE", "columnNameOfCorruptRecord": "_corrupt_record"}
+df = spark.read.json(jsonFilePath, schema=schema, mode="PERMISSIVE", columnNameOfCorruptRecord="_corrupt_record").cache()
+#df = spark.read.schema(schema).options(**options).csv(jsonFilePath).cache()
+
+# Write the CSV file to a desired location
+csvFilePath = "/mnt/staging"
+df.write.csv(csvFilePath, header=True, mode='overwrite')
+#dbutils.fs.put('/mnt/staging/NYC_crime.csv', df.to_csv(index=False), overwrite=True)
