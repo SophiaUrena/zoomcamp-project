@@ -6,7 +6,7 @@
 		"annotations": [],
 		"type": "AmazonS3",
 		"typeProperties": {
-			"serviceUrl": "https://s3.amazonaws.com",
+			"serviceUrl": "s3_serviceURL",
 			"accessKeyId": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
