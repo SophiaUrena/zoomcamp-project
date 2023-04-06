@@ -1,16 +1,16 @@
 import pyspark.sql.functions as F
 #from datetime import datetme as dt
-
+ 
 #Just change all the values here based on the resource name you have created in your environemnt and workspace.
-
-sqlDbName = 'NYC_Crimes_SQL_DB'
+ 
+sqlDbName = 'azuredbproject2'
 dbUserName = 'sophiaurena'
 passwordKey = 'sqldbpasswordkey'
-stgAccountSASTokenKey = 'nycsastokenforstg'
-landingFileName ='NYC_crime.csv' #'Product'  #dbutils.widgets.get('Product')
-databricksScopeName ='NYCscope'
-dbServer = 'crimesnycserver'
+stgAccountSASTokenKey = 'sastokenforstg'
+landingFileName =fileName #'Product'  #dbutils.widgets.get('Product')
+databricksScopeName ='project2scope'
+dbServer = 'azureprojectnum2'
 dbServerPortNumber ='1433'
-storageContainer ='landing'
-storageAccount='crimesnycstorageaccount'
+storageContainer ='inputdata'
+storageAccount='azuresproject2'
 landingMountPoint ='/mnt'
