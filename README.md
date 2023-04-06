@@ -1,17 +1,20 @@
-# Pokemon Type Analytics
+# New York City Crimes Analytics
+This project applies data engineering concepts and skills learned throughout the Data Engineering Zoomcamp by DataTalksClub.
 
+Crimes have a wide-ranging effects on individuals and communities as a whole, this results in a negative impact on the well-being of individuals within a community. Prevention and awareness increases by analsying the trends of crimes, which then help reduce the impact of crimes on society by creating a safer community.
 
-# Introduction
-
+The goal of this project was to develope a workflow to extracts, transforms, and loads data. This workflow will allow users to analyse crime data from New York City through a dashboard.
 
 # Dataset
-The Dataset can be downloaded https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json 
-List of fun datasets https://github.com/jdorfman/awesome-json-datasets 
+This project used the NYPD Compliant Data Historic dataset, data can be downloaded as a CSV through their website. The JSON format of this data set was used for this project and can be found here: LINK. The dataset was updated quarterly and includes crimes reported throughout New York City.
+
+Each complaint has an ID, description of the crime committed, along with documentation of the date and location of the occurrence. 
 
 # Tools
 Cloud - AWS S3 Bucket and Azure 
 Data Lake - Azure Data Lake
 Data Warehouse - SQL Database
+ETL - Databricks and Azure Data Factory
 Data Visualization - Power BI
 
 # Architecture
@@ -22,3 +25,4 @@ Data Visualization - Power BI
 
 # Dashboard
 
+Dashboard can be viewed at this link.
