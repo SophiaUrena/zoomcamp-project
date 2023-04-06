@@ -15,7 +15,7 @@
 		"typeProperties": {
 			"blobPathBeginsWith": "/landing/blobs/landing/",
 			"ignoreEmptyBlobs": true,
-			"scope": "/subscriptions/6c95a4c5-9b6d-411c-a142-023d58b4e049/resourceGroups/nyc_crimes_resource_group/providers/Microsoft.Storage/storageAccounts/crimesnycstorageaccount",
+			"scope": "trigger_scope",
 			"events": [
 				"Microsoft.Storage.BlobCreated"
 			]
