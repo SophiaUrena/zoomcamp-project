@@ -1,12 +1,12 @@
 # New York City Crimes Analytics
-This project applies data engineering concepts and skills learned throughout the Data Engineering Zoomcamp by DataTalksClub.
+This project applies data engineering concepts and skills learned throughout the [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) by [DataTalksClub](https://datatalks.club/).
 
 Crimes have a wide-ranging effects on individuals and communities as a whole, this results in a negative impact on the well-being of individuals within a community. Prevention and awareness increases by analsying the trends of crimes, which then help reduce the impact of crimes on society by creating a safer community.
 
 The goal of this project was to develope a workflow to extracts, transforms, and loads data. This workflow will allow users to analyse crime data from New York City through a dashboard.
 
 # Dataset
-This project used the NYPD Compliant Data Historic dataset, data can be downloaded as a CSV through their website. The JSON format of this data set was used for this project and can be found here: [Link](https://drive.google.com/file/d/1lJBE-u9cbv6yowtLAeNc3Ovy5WmgY_Hs/view?usp=sharing). The dataset was updated quarterly and includes crimes reported throughout New York City.
+This project used the [NYPD Compliant Data Historic](https://data.cityofnewyork.us/Public-Safety/NYC-crime/qb7u-rbmr) dataset, data can be downloaded as a CSV through their website. The JSON format of this data set was used for this project and can be found here: [Link](https://drive.google.com/file/d/1lJBE-u9cbv6yowtLAeNc3Ovy5WmgY_Hs/view?usp=sharing). The dataset was updated quarterly and includes crimes reported throughout New York City.
 
 Each complaint has an ID, description of the crime committed, along with documentation of the date and location of the occurrence. 
 
