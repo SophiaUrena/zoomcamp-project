@@ -1,0 +1,19 @@
+# ALTERNATIVE
+
+# Read the JSON file into a DataFrame
+# json_data = spark.read.json("/mnt/landing/2023/04/05/NYC_crime.json")
+
+# json_data.printSchema()
+
+# Flatten the nested columns in the DataFrame
+# from pyspark.sql.functions import col
+#flat_data = json_data.select(col("CMPLNT_NUM.*"), col("ADDR_PCT_CD.*"), col("BORO_NM.*"), col("CMPLNT_FR_DT.*"), col("CMPLNT_FR_TM.*"), col("CMPLNT_TO_DT.*"), col("CMPLNT_TO_TM.*"), col("CRM_ATPT_CPTD_CD.*"), col("HADEVELOPT.*"), col("JURIS_DESC.*"), col("KY_CD.*"), col("LAW_CAT_CD.*"), col("LOC_OF_OCCUR_DESC.*"), col("OFNS_DESC.*"), col("PARKS_NM.*"), col("PD_CD.*"), col("PD_DESC.*"), col("PREM_TYP_DESC.*"), col("RPT_DT"), col("X_COORD_CD.*"), col("Y_COORD_CD.*"), col("Latitude.*"), col("Longitude.*"), col("Lat_Lon.*"))
+
+#ignore corrupt records
+# options = {"mode": "PERMISSIVE", "columnNameOfCorruptRecord": "_corrupt_record"}
+# df = spark.read.json(jsonFilePath, schema=schema, mode="PERMISSIVE", columnNameOfCorruptRecord="_corrupt_record").cache()
+
+# flat_data = json_data.select("*", "RPT_DT", "Latitude", "Longitude", "Lat_Lon")
+
+# Write the flattened DataFrame to CSV format
+# flat_data.write.option("header", "true").csv("/mnt/staging/mycsv.csv")
