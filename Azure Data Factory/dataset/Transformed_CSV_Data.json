@@ -1,3 +1,4 @@
+#Alternative method of data transformation using the Copy Activity
 {
 	"name": "Transformed_CSV_Data",
 	"properties": {
