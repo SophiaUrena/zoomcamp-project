@@ -6,7 +6,7 @@ Crimes have a wide-ranging effects on individuals and communities as a whole, th
 The goal of this project was to develope a workflow to extracts, transforms, and loads data. This workflow will allow users to analyse crime data from New York City through a dashboard.
 
 # Dataset
-This project used the NYPD Compliant Data Historic dataset, data can be downloaded as a CSV through their website. The JSON format of this data set was used for this project and can be found here: LINK. The dataset was updated quarterly and includes crimes reported throughout New York City.
+This project used the NYPD Compliant Data Historic dataset, data can be downloaded as a CSV through their website. The JSON format of this data set was used for this project and can be found here: ![Link](https://drive.google.com/file/d/1lJBE-u9cbv6yowtLAeNc3Ovy5WmgY_Hs/view?usp=sharing). The dataset was updated quarterly and includes crimes reported throughout New York City.
 
 Each complaint has an ID, description of the crime committed, along with documentation of the date and location of the occurrence. 
 
