@@ -1,0 +1,104 @@
+{
+	"name": "Azure_DL_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"landingFolder": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().landingFolder",
+					"type": "Expression"
+				},
+				"fileSystem": "landing"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"CMPLNT_NUM": {
+					"type": "integer"
+				},
+				"ADDR_PCT_CD": {
+					"type": "integer"
+				},
+				"BORO_NM": {
+					"type": "string"
+				},
+				"CMPLNT_FR_DT": {
+					"type": "string"
+				},
+				"CMPLNT_FR_TM": {
+					"type": "string"
+				},
+				"CMPLNT_TO_DT": {
+					"type": "string"
+				},
+				"CMPLNT_TO_TM": {
+					"type": "string"
+				},
+				"CRM_ATPT_CPTD_CD": {
+					"type": "string"
+				},
+				"HADEVELOPT": {
+					"type": "string"
+				},
+				"JURIS_DESC": {
+					"type": "string"
+				},
+				"KY_CD": {
+					"type": "integer"
+				},
+				"LAW_CAT_CD": {
+					"type": "string"
+				},
+				"LOC_OF_OCCUR_DESC": {
+					"type": "string"
+				},
+				"OFNS_DESC": {
+					"type": "string"
+				},
+				"PARKS_NM": {
+					"type": "string"
+				},
+				"PD_CD": {
+					"type": "integer"
+				},
+				"PD_DESC": {
+					"type": "string"
+				},
+				"PREM_TYP_DESC": {
+					"type": "string"
+				},
+				"RPT_DT": {
+					"type": "string"
+				},
+				"X_COORD_CD": {
+					"type": "integer"
+				},
+				"Y_COORD_CD": {
+					"type": "integer"
+				},
+				"Latitude": {
+					"type": "string"
+				},
+				"Longitude": {
+					"type": "string"
+				},
+				"Lat_Lon": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

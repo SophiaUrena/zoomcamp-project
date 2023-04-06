@@ -1,0 +1,68 @@
+{
+	"name": "Ingestion_s3_to_ADLS",
+	"properties": {
+		"activities": [
+			{
+				"name": "copy data for ingest",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AmazonS3ReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "s3_JSON_DS",
+						"type": "DatasetReference",
+						"parameters": {
+							"folderPath": "@concat(formatDateTime(utcnow(), 'yyyy'), '/', formatDateTime(utcnow(), 'MM'), '/', formatDateTime(utcnow(), 'dd'), '/')"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Azure_DL_DS",
+						"type": "DatasetReference",
+						"parameters": {
+							"landingFolder": {
+								"value": "@concat('landing/', formatDateTime(utcnow(), 'yyyy'), '/', formatDateTime(utcnow(), 'MM'), '/', formatDateTime(utcnow(), 'dd'), '/')",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-04-04T03:14:07Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

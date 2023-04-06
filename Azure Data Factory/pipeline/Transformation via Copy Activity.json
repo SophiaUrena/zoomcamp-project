@@ -1,0 +1,223 @@
+{
+	"name": "Transformation via Copy Activity",
+	"properties": {
+		"activities": [
+			{
+				"name": "Transformation",
+				"description": "This is an alternative to Databricks",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['pokemon'][0]['id']"
+								},
+								"sink": {
+									"type": "Int32",
+									"ordinal": 1
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['num']"
+								},
+								"sink": {
+									"type": "Int32",
+									"ordinal": 2
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['name']"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 3
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['img']"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 4
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['type'][0]"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 5
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['height']"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 6
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['weight']"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 7
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['candy']"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 8
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['candy_count']"
+								},
+								"sink": {
+									"type": "Int32",
+									"ordinal": 9
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['egg']"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 10
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['spawn_chance']"
+								},
+								"sink": {
+									"type": "Decimal",
+									"ordinal": 11
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['avg_spawns']"
+								},
+								"sink": {
+									"type": "Decimal",
+									"ordinal": 12
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['spawn_time']"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 13
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['multipliers'][0]"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 14
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['weaknesses'][0]"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 15
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['next_evolution'][0]['num']"
+								},
+								"sink": {
+									"type": "Int32",
+									"ordinal": 16
+								}
+							},
+							{
+								"source": {
+									"path": "$['pokemon'][0]['next_evolution'][0]['name']"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 17
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Azure_DL_DS",
+						"type": "DatasetReference",
+						"parameters": {
+							"landingFolder": "@concat('landing/', formatDateTime(utcnow(), 'yyyy'), '/', formatDateTime(utcnow(), 'MM'), '/', formatDateTime(utcnow(), 'dd'), '/')"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Transformed_CSV_Data",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-04-06T03:19:47Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
