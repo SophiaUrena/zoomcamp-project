@@ -18,11 +18,12 @@ ETL - Databricks and Azure Data Factory
 Data Visualization - Power BI
 
 # Architecture
-
+![image](https://user-images.githubusercontent.com/121827505/230258864-063b5552-42b8-4840-b4eb-d2e88cdab6b4.png)
 
 # Steps to Reproduce
 
 
 # Dashboard
+![image](https://user-images.githubusercontent.com/121827505/230258778-46dce08d-ed7b-489e-933a-70aebcc6d8f4.png)
 
 Dashboard can be viewed at this link.
